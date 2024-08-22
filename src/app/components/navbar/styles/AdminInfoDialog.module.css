@@ -1,0 +1,224 @@
+.dialogOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1199;
+}
+
+.dialog {
+  background-color: var(--header-background);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  width: 80%;
+  max-width: 600px;
+  padding: 20px;
+  z-index: 1200;
+}
+
+.dialogHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.dialogHeader h2 {
+  margin: 0;
+  color: var(--header-text);
+  font-size: 1.5rem;
+}
+
+.closeIcon {
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--header-text);
+}
+
+.dialogContent {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.adminTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.adminTable th,
+.adminTable td {
+  border: 1px solid var(--border-color);
+  padding: 10px;
+  text-align: left;
+  background-color: var(--header-background);
+}
+
+.adminTable th {
+  background-color: var(--lighter-background);
+  font-weight: bold;
+  color: var(--header-text);
+}
+
+.adminTable tr:hover {
+  background-color: var(--hover-background);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  color: var(--hover-text);
+}
+
+.editButton,
+.deleteButton {
+  padding: 5px 10px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Updated colorful button styles */
+.editButton {
+  background-color: #ff9800; /* Bright orange for edit */
+  color: white;
+}
+
+.deleteButton {
+  background-color: var(--delete-button-background, #d9534f); /* Use default value for light theme */
+  color: white;
+}
+
+.editButton:hover {
+  background-color: #f57c00; /* Darker orange for hover */
+}
+
+.deleteButton:hover {
+  background-color: var(--delete-button-hover-background, #c9302c); /* Use default value for light theme */
+}
+
+.loading {
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+}
+
+.addButton {
+  background-color: var(--button-background);
+  color: var(--button-text);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.addButton:hover {
+  background-color: var(--hover-background);
+}
+
+.addAdminForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 14px;
+  color: var(--body-text);
+  background-color: var(--input-background);
+}
+
+.button {
+  background-color: var(--button-background);
+  color: var(--button-text);
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.disabledActions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+}
+
+.lineIcon {
+  font-size: 24px;
+  color: var(--border-color);
+}
+
+/* Light Theme */
+.light {
+  --header-background: #ffffff;
+  --header-text: #202124;
+  --border-color: #dadce0;
+  --lighter-background: #f1f3f4;
+  --hover-background: #e8f0fe;
+  --hover-text: #202124;
+  --link-color: #1a73e8;
+  --body-background: #ffffff;
+  --body-text: #202124;
+  --button-background: #007bff;
+  --button-text: #ffffff;
+  --delete-button-background: #d9534f;
+  --delete-button-hover-background: #c9302c;
+}
+
+/* Dark Theme */
+.dark {
+  --header-background: #303134;
+  --header-text: #e8eaed;
+  --border-color: #5f6368;
+  --lighter-background: #3c4043;
+  --hover-background: #4a4a4a;
+  --hover-text: #e8eaed;
+  --link-color: #8ab4f8;
+  --body-background: #202124;
+  --body-text: #e8eaed;
+  --button-background: #8ab4f8;
+  --button-text: #202124;
+  --delete-button-background: #555555;
+  --delete-button-hover-background: #4a4a4a;
+}
+
+.light .dialogHeader h2,
+.light .closeButton,
+.light .adminTable th,
+.light .adminTable td {
+  color: var(--header-text);
+}
+
+.dark .dialogHeader h2,
+.dark .closeButton,
+.dark .adminTable th,
+.dark .adminTable td {
+  color: var(--header-text);
+}
+
+.dark .editButton:hover,
+.dark .addButton:hover,
+.dark .button:hover {
+  background-color: var(--hover-background);
+}
+

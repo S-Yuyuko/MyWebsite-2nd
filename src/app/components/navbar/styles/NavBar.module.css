@@ -1,0 +1,157 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background-color: var(--header-background);
+  z-index: 1100; /* Ensure it is above the slider */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.identityContainer {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+.identityContainer:hover .identityIcon {
+  color: var(--hover-text);
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navItem {
+  margin-right: 20px;
+}
+
+.navLink {
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px 15px;
+  color: var(--body-text);
+  border-radius: 8px;
+  transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.navLink:hover {
+  color: var(--hover-text);
+  background-color: var(--hover-background);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.toggleContainer {
+  margin-left: auto;
+}
+
+.identityIcon {
+  font-size: 24px;
+  color: var(--body-text);
+  margin-left: 10px;
+  transition: color 0.3s ease;
+}
+
+.subMenu {
+  position: absolute;
+  top: 130%;
+  left: 0;
+  background-color: var(--lighter-background);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  padding: 10px 0;
+  z-index: 10;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(10px);
+}
+
+.subMenuItem {
+  padding: 10px 20px;
+  color: var(--body-text);
+  text-align: center;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.subMenuItem:hover {
+  background-color: var(--hover-background);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Light Theme */
+.light {
+  --header-background: var(--header-background, #ffffff);
+  --body-text: var(--body-text, #202124);
+  --hover-text: var(--hover-text, #202124);
+  --hover-background: var(--hover-background, #f1f3f4);
+  --lighter-background: var(--lighter-background, #f1f3f4);
+  --submenu-bg: #ffffff;
+}
+
+.light .navLink:hover {
+  color: var(--hover-text);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.light .identityIcon {
+  color: var(--body-text);
+}
+
+.light .subMenu {
+  background-color: var(--submenu-bg);
+}
+
+.light .subMenuItem {
+  color: var(--body-text);
+}
+
+/* Dark Theme */
+.dark {
+  --header-background: var(--header-background, #303134);
+  --body-text: var(--body-text, #e8eaed);
+  --hover-text: var(--hover-text, #e8eaed);
+  --hover-background: var(--hover-background, #4a4a4a);
+  --lighter-background: var(--lighter-background, #303134);
+  --submenu-bg: #444444;
+}
+
+.dark .navLink:hover {
+  color: var(--hover-text);
+  box-shadow: 0 0 4px 2px rgba(255, 255, 255, 0.1);
+}
+
+.dark .identityIcon {
+  color: var(--body-text);
+}
+
+.dark .subMenu {
+  background-color: var(--submenu-bg);
+}
+
+.dark .subMenuItem {
+  color: var(--body-text);
+}

@@ -1,0 +1,161 @@
+/* Container for the entire Projects component */
+.projectContainer {
+  display: flex;
+  width: 100%;
+  height: 200vh;
+  overflow: hidden;
+  font-family: 'Lato', sans-serif;
+  background: linear-gradient(135deg, var(--body-background) 30%, var(--lighter-background) 100%);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* When the element is visible */
+.projectVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Catalog (left panel) styles */
+.projectCatalog {
+  width: 25%;
+  background: rgba(10, 10, 10, 0.05); /* Darker semi-transparent background */
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 10px 0 0 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Light border for frosted glass effect */
+  overflow-y: auto;
+  backdrop-filter: blur(20px) saturate(150%); /* Deeper Gaussian blur with saturation for frosted effect */
+  -webkit-backdrop-filter: blur(20px) saturate(150%); /* For Safari support */
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+/* Catalog list styles */
+.projectCatalogList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Individual catalog item styles */
+.projectCatalogItem {
+  padding: 10px 15px;
+  margin: 8px 0;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: transparent;
+  color: var(--body-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Active catalog item styles */
+.projectActive,
+.projectCatalogItem:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Lighter background for active state */
+  color: var(--hover-text);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-left: 4px solid var(--link-color);
+}
+
+/* Project details (right panel) styles */
+.projectDetails {
+  width: 75%;
+  margin: 8px;
+  padding: 20px;
+  background: rgba(10, 10, 10, 0.05); /* Darker semi-transparent background */
+  border-radius: 0 10px 10px 0;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Light border for frosted glass effect */
+  overflow-y: auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  transition: background-color 0.3s ease;
+}
+
+/* Project title styles */
+.projectTitle {
+  font-size: 2.5rem;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 20px;
+  color: var(--header-text);
+  transition: color 0.3s ease;
+}
+
+/* Project skills and description styles */
+.projectSkills,
+.projectDescription {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: var(--body-text);
+  transition: color 0.3s ease;
+}
+
+/* Media container styles */
+.projectMediaContainer {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Media image styles */
+.projectMediaImage {
+  max-width: 60%;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  filter: brightness(0.9) saturate(1.2);
+}
+
+.projectMediaImage:hover {
+  transform: scale(1.05);
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
+  filter: brightness(1) saturate(1.4);
+}
+
+/* Fullscreen overlay */
+.projectFullscreenOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.95));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1300;
+}
+
+/* Fullscreen image styles */
+.projectFullscreenImage {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projectFullscreenImage:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.7);
+}
+
+/* Close icon styles */
+.projectCloseIcon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.projectCloseIcon:hover {
+  transform: scale(1.2);
+  color: var(--link-color);
+}

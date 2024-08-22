@@ -1,0 +1,22 @@
+.experiencesContainer {
+  width: 100%;
+}
+
+.experienceSection {
+  width: 100%;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* When the section is visible */
+.experienceSection.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Specific sections */
+.projectWordsSection,
+.projectsSection {
+  margin-bottom: 50px; /* Add spacing between sections */
+}

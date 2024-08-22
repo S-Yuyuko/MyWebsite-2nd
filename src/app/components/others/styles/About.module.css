@@ -1,0 +1,109 @@
+.aboutContainer {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100vw; /* Full viewport width */
+    height: 300vh; /* Full viewport height */
+    overflow: hidden;
+}
+
+.sectionBackground {
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(20px) saturate(200%); /* Stronger frosted glass effect */
+    -webkit-backdrop-filter: blur(20px) saturate(200%); /* Safari support */
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out; /* Smooth transition */
+    opacity: 0;
+    transform: scale(0.95); /* Initial scale for entry effect */
+}
+
+/* Specific backgrounds for each section */
+.sectionBackground.introduction {
+    background: var(--introduction-bg, linear-gradient(135deg, rgba(255, 183, 77, 1), rgba(255, 138, 101, 1)));
+    box-shadow: 0 4px 20px rgba(255, 183, 77, 0.6); /* Orange shadow */
+}
+
+.sectionBackground.skills {
+    background: var(--skills-bg, linear-gradient(135deg, rgba(77, 182, 172, 1), rgba(38, 166, 154, 1)));
+    box-shadow: 0 4px 20px rgba(77, 182, 172, 0.6); /* Teal shadow */
+}
+
+.sectionBackground.education {
+    background: var(--education-bg, linear-gradient(135deg, rgba(129, 162, 255, 1), rgba(104, 142, 255, 1)));
+    box-shadow: 0 4px 20px rgba(129, 162, 255, 0.6); /* Blue shadow */
+}
+
+.section {
+    position: relative;
+    width: 100vw; /* Full width */
+    height: 100vh; /* Full height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    overflow: hidden;
+    background-color: transparent; /* Transparent background */
+    transition: background-color 0.3s ease;
+}
+
+.sectionTitle {
+    font-size: 2.5rem; /* Slightly larger font size for more emphasis */
+    font-family: 'Playfair Display', serif;
+    color: var(--header-text);
+    text-align: center;
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Longer transition for more noticeable movement */
+    width: 100%; /* Full width */
+    opacity: 1;
+    z-index: 2; /* Keep title on top */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sectionTitle i {
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.sectionContent {
+    position: absolute;
+    width: 100%; /* Full width */
+    height: auto; /* Auto height to accommodate multi-line content */
+    max-height: 100%; /* Ensure content doesn't overflow section */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Lato', sans-serif;
+    color: var(--body-text);
+    padding: 20px;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Slower, more noticeable transitions */
+    z-index: 1; /* Behind the title initially */
+    transform: scale(0.8); /* More apparent zoom-out effect */
+    overflow-y: auto; /* Allow scrolling if content exceeds the container's height */
+    word-wrap: break-word; /* Ensure long words break appropriately */
+}
+
+.section.active .sectionTitle {
+    opacity: 0; /* Fade out title */
+    transform: translateY(-50px) scale(0.8); /* Larger movement and scale for more impact */
+}
+
+.section.active .sectionContent {
+    opacity: 1; /* Fade in content */
+    z-index: 2; /* Bring content to the front */
+    transform: scale(1.1); /* Slight zoom-in for a more dynamic entry */
+}
+
+/* Initial animation for sections */
+.sectionBackground.visible {
+    opacity: 1;
+    transform: scale(1); /* Smoothly scale to full size */
+}

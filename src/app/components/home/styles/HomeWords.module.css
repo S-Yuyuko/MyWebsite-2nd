@@ -1,0 +1,40 @@
+.homeWordsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--body-background);
+  color: var(--body-text);
+  text-align: center;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.titleWithShadow {
+  font-size: 2.5rem;
+  font-family: 'Playfair Display', serif;
+  color: var(--header-text);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Adjust based on the theme */
+  margin-bottom: 20px;
+  transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+.description {
+  font-size: 1.5rem;
+  font-family: 'Lato', sans-serif;
+  color: var(--body-text);
+  line-height: 1.6;
+  max-width: 800px;
+  white-space: pre-line; /* Preserve whitespace and handle newlines */
+  word-wrap: break-word; /* Ensure long words break into the next line */
+  transition: color 0.3s ease-in-out;
+}
+
+
+.noSelection {
+  font-size: 1.5rem;
+  font-family: 'Lato', sans-serif;
+  color: var(--body-text);
+  transition: color 0.3s ease-in-out;
+}
